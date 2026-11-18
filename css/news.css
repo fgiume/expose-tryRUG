@@ -1,0 +1,14 @@
+/* EXPOSE News — editorial updates from the research team */
+.news-layout{max-width:860px}
+.news-intro{margin-bottom:1.4rem}
+.news-list{display:grid;gap:1.2rem;margin-top:1.4rem}
+.news-post{border:1px solid var(--line,#dce3eb);border-radius:12px;background:#fff;padding:1.7rem;overflow-wrap:anywhere}
+.news-post h2{font-family:var(--serif,Georgia,serif);font-size:1.55rem;margin:.6rem 0 1rem}
+.news-post p{line-height:1.7}
+.news-summary{font-weight:600}
+.news-meta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;font-size:.84rem;color:var(--muted,#687686)}
+.news-category{color:#174b6d;background:#eaf1f6;border-radius:100px;padding:.18rem .7rem}
+.news-link{display:inline-block;font-weight:700;margin-top:.4rem;text-decoration:underline;text-underline-offset:3px}
+.news-empty{border:1px dashed var(--line,#dce3eb);border-radius:12px;padding:1.4rem;color:var(--muted,#687686);background:#f8fafc}
+.news-status{font-size:.88rem;color:var(--muted,#687686)}
+@media(max-width:650px){.news-post{padding:1.1rem}}

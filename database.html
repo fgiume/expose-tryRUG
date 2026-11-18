@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database – EXPOSE</title>
+  <meta name="description" content="Filter classified cases of UN sanctions evasion documented by the Panels of Experts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/database-coded.css">
+  <link rel="stylesheet" href="css/database-next.css">
+  <link rel="stylesheet" href="css/document-search.css">
+</head>
+<body data-page="database">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="EXPOSE home"><img src="assets/logo.svg" alt="EXPOSE"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">&#9776; Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="our-project.html">Our project</a></li>
+        <li><a href="database.html" aria-current="page">Database</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li class="cta"><a href="contact.html">Contact</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" class="db-next">
+    <section class="page-hero">
+      <div class="container">
+        <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
+        <h1>The EXPOSE Database</h1>
+        <p class="lead">Explore the research team's coded evidence and the 69 episode documents behind it. Compare sanctions measures, strategies and tactics, then open the source passages.</p>
+      </div>
+    </section>
+    <section class="db-main-section">
+      <div class="container">
+        <div class="db-view-tabs" role="tablist" aria-label="Choose database view">
+          <button id="tab-evidence" type="button" role="tab" aria-controls="evidence-view" aria-selected="true">Search the Evidence</button>
+          <button id="tab-matrix" type="button" role="tab" aria-controls="matrix-view" aria-selected="false">Explore the Data</button>
+        </div>
+        <section id="evidence-view" role="tabpanel" aria-labelledby="tab-evidence" class="db-view">
+          <div class="section-head">
+            <span class="eyebrow">Research documents &middot; coded examples</span>
+            <h2>Search the Evidence</h2>
+            <p>Search coded examples and the complete text of the project's episode documents. Results are ranked by <strong>BM25 keyword relevance</strong>, with filters for cases, sanctions, strategies and tactics.</p>
+          </div>
+          <div class="notice db-method-note"><strong>Search methodology.</strong> Both coded excerpts and episode documents use BM25 relevance ranking (k1 = 1.2, b = 0.75) when keywords are entered. Ranking reflects word frequency, rarity across the collection and document length, not evidentiary reliability. Stopwords are excluded and matching ignores case and accents. With an empty search, results appear in source order. <strong>About the evidence.</strong> This tool uses EXPOSE research documents and coding, not internet search results. A document match means that a keyword occurs in that episode document; a coding filter selects documents containing at least one corresponding coded record. These need not be the same passage. The source documents are not the complete UN Panel of Experts reports.</div>
+          <div class="db-evidence-layout">
+            <div class="db-search-panel" role="search" aria-label="Search EXPOSE evidence">
+              <div class="db-search-primary">
+                <label for="ev-keyword">Search words</label>
+                <input id="ev-keyword" type="search" placeholder="e.g. false documentation, charcoal smuggling" autocomplete="off">
+                <p class="db-search-tip">Searches coded excerpts and episode research documents using BM25 relevance ranking.</p>
+              </div>
+              <div class="db-filter-heading"><h3>Refine your search</h3><span>All existing filters remain available</span></div>
+              <div class="db-filter-grid">
+                <div class="db-filter-field"><label for="ev-case">Case</label><select id="ev-case"><option value="">All cases</option></select></div>
+                <div class="db-filter-field"><label for="ev-episode">Episode</label><select id="ev-episode"><option value="">All episodes</option></select></div>
+                <div class="db-filter-field"><label for="ev-status">Record type</label><select id="ev-status"><option value="">All records</option><option value="Coded example">Coded examples</option><option value="No violations reported">No violations reported</option></select></div>
+                <div class="db-filter-field"><label for="ev-group">Sanction category</label><select id="ev-group"><option value="">All categories</option><option>Goods</option><option>Money</option><option>Services</option><option>Other</option></select></div>
+                <div class="db-filter-field"><label for="ev-variable">Sanctions variable</label><select id="ev-variable"><option value="">All sanctions</option></select></div>
+                <div class="db-filter-field"><label for="ev-strategy">Evasion strategy</label><select id="ev-strategy"><option value="">All strategies</option></select></div>
+                <div class="db-filter-field"><label for="ev-tactic">Evasion tactic</label><select id="ev-tactic"><option value="">All tactics</option></select></div>
+                <div class="db-filter-field"><label for="ev-year">Report year</label><select id="ev-year"><option value="">All years</option></select></div>
+                <div class="db-filter-field"><label for="ev-match">Keyword match</label><select id="ev-match"><option value="any">Any search word</option><option value="all">All search words</option></select></div>
+              </div>
+              <div class="db-search-actions"><button id="ev-clear" type="button" class="btn btn-outline btn-sm">Clear search and filters</button></div>
+            </div>
+            <div class="db-results-column">
+              <div class="db-result-bar"><h3>Coded evidence</h3><span id="ev-count" role="status" aria-live="polite"></span></div>
+              <p class="db-hint">One result represents a distinct documented excerpt. The coding and report symbols below come from the EXPOSE research documents.</p>
+              <div id="ev-records"></div>
+              <button id="ev-more" type="button" class="btn btn-outline btn-sm" hidden>Show more coded examples</button>
+              <div class="db-result-bar db-documents-title"><h3>Episode documents</h3><span id="doc-count" role="status" aria-live="polite"></span></div>
+              <p class="db-hint">Full-text keyword results from the team's 69 episode documents. Download and full-text options refer to these research documents, not complete UN Panel reports.</p>
+              <div id="ev-documents"></div>
+              <button id="doc-more" type="button" class="btn btn-outline btn-sm" hidden>Show more documents</button>
+            </div>
+          </div>
+        </section>
+        <section id="matrix-view" role="tabpanel" aria-labelledby="tab-matrix" class="db-view" hidden>
+          <div class="section-head">
+            <span class="eyebrow">Cross-tabulate the EXPOSE coding</span>
+            <h2>Explore the Data</h2>
+            <p>Choose what appears on the rows and columns. Each matrix cell tells you whether the two variables occur together in the <strong>same documented coded example</strong>, not merely in the same country or episode.</p>
+          </div>
+          <div class="db-status-explainer" aria-label="Interpretation of matrix results">
+            <div><strong>YES · 1</strong><p>At least one documented example has both selected variables coded together. Select YES to see up to 15 supporting examples.</p></div>
+            <div><strong>NO · 0</strong><p>No co-coded example is found in the selected scope where the coding is informative. This does not prove that evasion never occurred.</p></div>
+            <div><strong>NO DATA · 9</strong><p>Insufficient information to assess the combination, including episodes with no relevant sanctions imposed or no information available.</p></div>
+          </div>
+          <p class="db-hint"><strong>Scope:</strong> A case includes all its episodes; selecting one episode restricts the comparison strictly to that episode. Uninformative rows and columns are hidden by default, but the missing-data values are preserved and can be displayed using the checkbox. <strong>Method:</strong> YES is evaluated at the individual source-excerpt level (Option B). NO and NO DATA use the project's episode-level <code>0 / 1 / 9</code> coding from Database 3.0. Missing information is never counted as NO. Repeated coding rows referring to the same excerpt are grouped as one example. Data collection ends 31 December 2025.</p>
+          <div class="db-matrix-controls">
+            <div><label for="mx-row">Rows</label><select id="mx-row"><option value="sanctions">Sanctions</option><option value="strategies">Strategies</option><option value="tactics">Tactics</option><option value="cases">Country cases (all episodes)</option><option value="episodes">Individual episodes</option></select></div>
+            <div><label for="mx-col">Columns</label><select id="mx-col"><option value="strategies">Strategies</option><option value="tactics">Tactics</option><option value="sanctions">Sanctions</option><option value="cases">Country cases (all episodes)</option><option value="episodes">Individual episodes</option></select></div>
+            <div><label for="mx-case">Country case (all episodes)</label><select id="mx-case"><option value="">All cases</option></select></div>
+            <div><label for="mx-episode">Specific episode</label><select id="mx-episode"><option value="">All episodes</option></select></div>
+            <div><label for="mx-row-search">Find row</label><input type="search" id="mx-row-search" placeholder="Filter row names"></div>
+            <div><label for="mx-col-search">Find column</label><input type="search" id="mx-col-search" placeholder="Filter column names"></div>
+            <div class="db-matrix-toggle"><label for="mx-show-empty"><input type="checkbox" id="mx-show-empty"> Show NO DATA-only rows and columns</label></div>
+          </div>
+          <div id="mx-summary" class="db-matrix-summary" role="status"></div>
+          <div id="mx-scroll" class="db-matrix-scroll"><table id="mx-table" aria-label="EXPOSE evidence cross-tabulation"></table></div>
+          <div id="mx-details" class="db-cell-details" hidden>
+            <div class="db-cell-details-head"><div><span class="eyebrow">Supporting evidence</span><h3 id="mx-details-title"></h3><p id="mx-details-count"></p></div><button id="mx-close" class="btn btn-outline btn-sm" type="button">Close</button></div>
+            <div id="mx-examples"></div>
+            <button id="mx-all" class="btn btn-primary" type="button">See all matching evidence in Search the Evidence &rarr;</button>
+          </div>
+          <div class="notice"><strong>Interpretive limits.</strong> The matrix reports patterns in the evidence collected and coded by EXPOSE, not the prevalence of sanctions evasion in the world. The absence of a recorded combination is not evidence that it never happened. The Excel workbook uses 1 for found/used, 0 for not found/not used, and 9 for unavailable information; the table preserves these distinctions.</div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot">
+        <div><img src="assets/logo.svg" alt="EXPOSE"><p>Experts Panels on Sanctions Evasion. A research project by Francesco, Irene, Ana and Janina Korte, linked to the University of Groningen.</p></div>
+        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="our-project.html">Our project</a></li><li><a href="database.html">Database</a></li>
+        <li><a href="countries.html">Countries</a></li><li><a href="contact.html">Contact</a></li><li><a href="news.html">News</a></li></ul></div>
+        <div><h4>Sources</h4><p style="font-size:.9rem">Cases are compiled from UN Panel of Experts reports and public reporting on them. Always check the original UN documents.</p></div>
+      </div>
+      <div class="legal"><span>&copy; <span data-year></span> EXPOSE project</span><span>Not an official UN website.</span></div>
+    </div>
+  </footer>
+
+  <script src="data/coded-cases.js"></script>
+  <script src="data/matrix-codes.js"></script>
+  <script src="js/bm25.js"></script>
+  <script src="data/episode-search.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/database-next.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,79 @@
+/* EXPOSE – integrated Database, search and cross-tabulations */
+.db-next .db-main-section{padding-top:2.25rem}
+.db-view-tabs{display:flex;gap:.4rem;border-bottom:1px solid var(--line);margin-bottom:2.1rem;flex-wrap:wrap}
+.db-view-tabs button{font:inherit;font-weight:700;cursor:pointer;padding:.85rem 1.3rem;border:0;border-bottom:4px solid transparent;background:none;color:var(--muted);border-radius:0}
+.db-view-tabs button[aria-selected="true"]{border-bottom-color:var(--amber);color:var(--navy)}
+.db-view-tabs button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.db-view[hidden],.db-cell-details[hidden]{display:none!important}
+.db-view .section-head{max-width:950px;margin-bottom:1.3rem}
+.db-method-note{margin-bottom:1.5rem}
+.db-evidence-layout{display:flex;flex-direction:column;gap:2rem}
+.db-search-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem;width:100%;box-shadow:0 3px 16px rgba(0,0,0,.025)}
+.db-search-primary{margin-bottom:1.35rem}
+.db-search-primary label{display:block;font-weight:750;margin-bottom:.5rem}
+.db-search-primary input{width:100%;font:inherit;border:2px solid var(--line);border-radius:10px;padding:1rem 1.1rem;min-height:52px}
+.db-search-primary input:focus{border-color:var(--blue);outline:2px solid transparent}
+.db-search-tip{color:var(--muted);font-size:.86rem;margin:.5rem 0 0}
+.db-filter-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:.3rem .8rem;margin:1rem 0 .75rem}
+.db-filter-heading h3{font-size:1.05rem;margin:0}
+.db-filter-heading span{font-size:.8rem;color:var(--muted)}
+.db-filter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem 1rem}
+.db-filter-field{min-width:0}
+.db-filter-field label{display:block;font-size:.86rem;font-weight:700;margin-bottom:.35rem}
+.db-filter-field select{display:block;width:100%;min-width:0;font:inherit;font-size:.9rem}
+.db-search-actions{display:flex;justify-content:flex-end;margin-top:1rem}
+.db-results-column{min-width:0}
+.db-result-bar{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;justify-content:space-between;margin-bottom:.3rem}
+.db-result-bar h3{margin:0}
+.db-result-bar span{font-size:.85rem;color:var(--muted)}
+.db-hint{font-size:.87rem;color:var(--muted);line-height:1.6}
+.db-evidence-card,.db-document-card{background:var(--card,#fff);background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:.85rem 0;padding:1.2rem;overflow-wrap:anywhere}
+.db-evidence-card h4,.db-document-card h4{font-family:var(--serif);font-size:1.1rem;margin:.55rem 0}
+.db-card-meta{display:flex;gap:.3rem;flex-wrap:wrap}
+.db-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin:.7rem 0}
+.db-chip{font-size:.75rem;padding:.25rem .5rem;border-radius:.35rem;background:#edf2f7;color:#263d56}
+.db-chip.strategy{background:#fff0dc;color:#77511e}
+.db-chip.tactic{background:#f1ebff;color:#53348a}
+.db-excerpt{line-height:1.65}
+.db-evidence-card details,.db-document-card details{margin-top:.6rem}
+.db-evidence-card summary,.db-document-card summary{cursor:pointer;font-weight:650;color:var(--blue)}
+.db-full-excerpt,.db-full-document{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;margin-top:.8rem}
+.db-full-document{max-height:460px;overflow:auto;padding:1rem;background:#f8fafc;border-radius:.4rem}
+.db-source-line{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere}
+.db-source-line a{margin-right:.5rem}
+.db-documents-title{margin-top:2.3rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.db-document-actions{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:.9rem}
+.db-active-pair{padding:.75rem 1rem;background:#fff7df;border-left:3px solid var(--amber);font-weight:650}
+.db-matrix-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+.db-matrix-controls label{display:block;font-weight:700;font-size:.82rem;margin-bottom:.3rem}
+.db-matrix-controls input,.db-matrix-controls select{width:100%;min-width:0}
+.db-status-explainer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.1rem 0}
+.db-status-explainer>div{border:1px solid var(--line);border-radius:.65rem;padding:1rem;background:#fff}
+.db-status-explainer strong{font-size:.95rem}
+.db-status-explainer p{font-size:.84rem;color:var(--muted);margin:.35rem 0 0}
+.db-status-explainer>div:nth-child(1){border-top:4px solid #27816b}
+.db-status-explainer>div:nth-child(2){border-top:4px solid #83909e}
+.db-status-explainer>div:nth-child(3){border-top:4px solid #d3a44d}
+.db-matrix-summary{font-size:.87rem;color:var(--muted);margin:1rem 0}
+.db-matrix-scroll{max-width:100%;overflow:auto;max-height:65vh;border:1px solid var(--line);border-radius:.7rem}
+#mx-table{border-collapse:separate;border-spacing:0;table-layout:auto;min-width:100%;font-size:.82rem}
+#mx-table th,#mx-table td{border-bottom:1px solid #e5e9ed;border-right:1px solid #e5e9ed;padding:.45rem .65rem;text-align:center;min-width:86px;vertical-align:middle}
+#mx-table thead th{position:sticky;top:0;background:#eef2f8;z-index:2;font-size:.77rem;max-width:180px;white-space:normal}
+#mx-table tbody th{position:sticky;left:0;background:#f7f9fc;z-index:1;text-align:left;min-width:180px;max-width:230px}
+#mx-table th.db-matrix-corner{position:sticky;left:0;top:0;z-index:3;text-align:left;background:#e7edf5}
+.db-cell-yes{background:#e7f3ec;color:#115b3b}
+.db-cell-no{background:#f3f5f6;color:#5c6978}
+.db-cell-na{background:#fff5df;color:#82672d}
+.db-yes-button{font:inherit;font-weight:800;cursor:pointer;color:#116342;background:none;border:0;padding:.35rem .5rem;border-radius:.3rem}
+.db-yes-button:hover,.db-yes-button:focus-visible{background:#b9dfc8;outline:2px solid #268e54}
+.db-cell-details{border:1px solid var(--line);border-radius:.7rem;padding:1.2rem;background:#f7f9fc;margin:1.75rem 0}
+.db-cell-details-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.db-cell-details-head h3{margin:.3rem 0}
+#mx-all{margin-top:.8rem}
+@media(max-width:920px){.db-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:690px){.db-status-explainer{grid-template-columns:1fr}.db-matrix-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.db-view-tabs button{flex:1;padding:.75rem .4rem;font-size:.85rem}.db-search-panel{padding:1rem}.db-filter-grid{grid-template-columns:1fr}.db-search-actions{justify-content:stretch}.db-search-actions button{width:100%}}
+
+/* Matrix: keep the NO DATA visibility toggle compact and readable. */
+.db-matrix-toggle{display:flex;align-items:center;min-height:42px}
+.db-matrix-toggle label{display:flex;align-items:center;gap:.55rem;margin:0;cursor:pointer;font-size:.88rem;line-height:1.45}
+.db-matrix-controls .db-matrix-toggle input[type="checkbox"]{width:auto;min-width:1rem;height:1rem;margin:0;flex:none}
