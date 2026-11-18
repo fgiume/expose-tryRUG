@@ -1,72 +1,132 @@
-/* EXPOSE | Groningen-inspired red, black and white edition.
-   Branding is an aesthetic reference, not an official university identity.
-   Keep distinct colours for maps, coding categories and YES/NO/NO DATA. */
+/* EXPOSE — University of Groningen-inspired editorial palette.
+   The official UG palette: red #DC002D, black, white; secondary purple
+   #772D68, cyan #009CEF, aqua #35B6B4, pink #EC6581,
+   green #60B669 and yellow #FFDC64.
+   This independent research-site styling is not an official UG identity.
+   Keep semantic colours in the database and world map distinct. */
 :root{
- --navy:#171717;--navy-2:#292929;--navy-3:#3b3b3b;
- --ink:#1b1b1b;--muted:#585858;--bg:#f7f7f7;--card:#fff;--line:#e3e3e3;
- --amber:#dc002d;--amber-d:#b00024;--blue:#b00024;
- --shadow:0 10px 32px rgba(0,0,0,.075)
+ --rug-red:#dc002d;--rug-purple:#772d68;--rug-cyan:#009cef;
+ --rug-aqua:#35b6b4;--rug-pink:#ec6581;--rug-green:#60b669;
+ --rug-yellow:#ffdc64;--rug-deep:#24152a;
+ --navy:#24152a;--navy-2:#34213c;--navy-3:#772d68;
+ --ink:#221e26;--muted:#595460;--bg:#f8f7f9;--card:#fff;--line:#e7e1e9;
+ --amber:#dc002d;--amber-d:#ae0024;--blue:#a9002a;
+ --shadow:0 14px 36px rgba(36,21,42,.095);
 }
 body{background:var(--bg);color:var(--ink)}
-a{color:#b00024}a:hover{color:#8c001c}
-h1,h2,h3{color:#1b1b1b}
-.site-header{background:rgba(255,255,255,.97);border-bottom:3px solid #dc002d;box-shadow:0 3px 16px rgba(0,0,0,.055)}
-.menu a{color:#252525}
-.menu a:hover{color:#a50021;background:#f9e9ed}
-.menu a[aria-current="page"]{color:#fff;background:#dc002d}
-.menu .cta a{border-color:#dc002d}
-.menu-toggle{color:#222;border-color:#ccc}
-.hero{background:radial-gradient(700px 480px at 90% 10%,#f9e6eb 0%,transparent 75%),linear-gradient(145deg,#fff 0%,#fafafa 100%);color:#1b1b1b;border-bottom:1px solid #eaeaea}
-.hero h1,.hero .expansion{color:#1b1b1b}
-.hero .lead{color:#555}
-.hero .expansion b{color:#dc002d}
-.hero-art img{filter:drop-shadow(0 18px 30px rgba(0,0,0,.12))}
-.page-hero{background:linear-gradient(120deg,#fff 0%,#fbeef1 100%);color:#262626;border-bottom:1px solid #e9e9e9}
-.page-hero h1{color:#191919}
-.page-hero .tagline{color:#b00024}
-.page-hero .lead{color:#555}
-.btn-primary{background:#dc002d;color:#fff;box-shadow:0 8px 22px rgba(220,0,45,.18)}
-.btn-primary:hover{background:#b00024;color:#fff}
-.btn-dark{background:#222;color:#fff}
-.btn-outline{border-color:#b00024;color:#b00024}
-.btn-outline:hover{background:#fbeef1}
-.hero .btn-ghost{border-color:#b00024;color:#b00024}
-.hero .btn-ghost:hover{background:#fbeef1}
-.stats{background:#222}
-.stat .num{color:#fff}
-.stat .lab{color:#d7d7d7}
-.eyebrow{color:#b00024}
+h1,h2,h3{color:var(--ink)}
+a{color:#a9002a}
+a:hover{color:#82001f}
+.container{max-width:1160px}
+.site-header{
+ background:rgba(255,255,255,.97);
+ border-bottom:3px solid var(--rug-red);
+ box-shadow:0 3px 18px rgba(36,21,42,.07)
+}
+.menu a{color:#302433}
+.menu a:hover{color:#8d0030;background:#faedf3}
+.menu a[aria-current="page"]{background:var(--rug-red);color:#fff}
+.menu .cta a{border-color:#d9c5d4}
+.menu-toggle{color:#2c2230;border-color:#cdbecb}
+.brand img{height:42px}
+.eyebrow{color:#ae0024}
+.lead{color:#57505e}
+.hero{
+ position:relative;
+ background:
+  radial-gradient(650px 460px at 96% 8%,rgba(119,45,104,.75),transparent 80%),
+  radial-gradient(570px 450px at 85% 110%,rgba(0,156,239,.15),transparent 79%),
+  linear-gradient(135deg,#231428 0%,#351e3c 55%,#522647 100%);
+ color:#f9f6fb;
+ border-bottom:5px solid var(--rug-red);
+}
+.hero h1{color:#fff}
+.hero .expansion{color:#f5e9f3}
+.hero .expansion b{color:#ffdc64}
+.hero .lead{color:#f0e7f0}
+.hero .logo-big{filter:drop-shadow(0 5px 18px rgba(0,0,0,.16))}
+.hero-art img{filter:drop-shadow(0 22px 32px rgba(0,0,0,.15))}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.76)}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.13);color:#fff}
+.hero .btn-primary{box-shadow:0 9px 28px rgba(220,0,45,.26)}
+.page-hero{
+ background:linear-gradient(115deg,#fff 0%,#fbf5fa 60%,#f6eaf1 100%);
+ color:#2a2130;border-bottom:3px solid var(--rug-red)
+}
+.page-hero h1{color:#251b2a}
+.page-hero .tagline{color:#a9002a}
+.page-hero .lead{color:#524a56}
+.btn-primary{background:#dc002d;color:#fff;box-shadow:0 8px 24px rgba(220,0,45,.19)}
+.btn-primary:hover{background:#a90024;color:#fff}
+.btn-dark{background:#332039;color:#fff}
+.btn-dark:hover{background:#532b56;color:#fff}
+.btn-outline{border-color:#9b0032;color:#9b0032;background:#fff}
+.btn-outline:hover{background:#f9e8ef;color:#870029}
+.stats{background:#26182c}
+.stat{border-right-color:rgba(255,255,255,.13)}
+.stat .num{color:#ffdc64}
+.stat .lab{color:#e5d9e6}
+.section-alt{background:#fff}
+.pillars{gap:1rem}
+.pillar{background:#fff;border:1px solid #e7dce7;box-shadow:0 4px 18px rgba(36,21,42,.04)}
+.pillar:nth-child(1){border-top:4px solid #dc002d}
+.pillar:nth-child(2){border-top:4px solid #009cef}
+.pillar:nth-child(3){border-top:4px solid #35b6b4}
+.pillar b{color:#302034}
 .step::before{background:#dc002d;color:#fff}
 .progress i{background:#dc002d}
-.tab[aria-selected="true"],.seg button[aria-pressed="true"],.pill-x{background:#dc002d;border-color:#dc002d;color:#fff}
-.badge{background:#272727}
-.badge.year{background:#fbe8ec;color:#9b001f}
-.spotlight{background:#222;color:#f2f2f2}
+.tab[aria-selected="true"],.seg button[aria-pressed="true"],.pill-x{
+ background:#772d68;border-color:#772d68;color:#fff
+}
+.tabpanel{background:#fcf9fc}
+.badge{background:#3f2744}
+.badge.year{background:#f8eaf3;color:#70265e}
+.spotlight{
+ background:
+  radial-gradient(420px 320px at 95% 15%,rgba(119,45,104,.48),transparent 80%),
+  linear-gradient(125deg,#24152a,#3c2046);
+ color:#f4edf5;border:1px solid #6b426c;
+ box-shadow:0 14px 35px rgba(36,21,42,.18)
+}
 .spotlight h2,.spotlight h3{color:#fff}
-.spotlight .btn-ghost{color:#fff;border-color:#fff}
-.spotlight .btn-ghost:hover{background:#3a3a3a}
-.avatar{background:linear-gradient(135deg,#292929,#b00024);box-shadow:0 0 0 2px #dc002d}
-.person .role{color:#a80022}
-.uni .dot{background:#dc002d;color:#fff}
-input:focus,select:focus,textarea:focus{border-color:#dc002d;outline-color:rgba(220,0,45,.2)}
-.chip:has(input:focus-visible){outline-color:rgba(220,0,45,.25)}
-.db-view-tabs button[aria-selected="true"]{border-bottom-color:#dc002d;color:#171717}
-.db-search-primary input:focus{border-color:#dc002d}
-.db-active-pair{background:#fbeef1;border-left-color:#dc002d}
-.db-chip{background:#f2f2f2;color:#333}
-.db-full-document{background:#fafafa}
-#mx-table thead th{background:#f4f4f4}
-#mx-table tbody th{background:#fafafa}
-#mx-table th.db-matrix-corner{background:#ededed}
-.db-cell-details{background:#fafafa}
-.news-category{color:#9c0020;background:#fbe8ed}
-.site-footer{background:#191919;color:#d0d0d0}
-.site-footer a{color:#e2e2e2}
+.spotlight .eyebrow{color:#ffdc64}
+.spotlight p{color:#f2eaf2}
+.spotlight .btn-ghost{color:#fff;border-color:rgba(255,255,255,.8)}
+.spotlight .btn-ghost:hover{background:rgba(255,255,255,.14);color:#fff}
+.spotlight .tag{color:#25202a}
+.avatar{background:linear-gradient(130deg,#772d68,#dc002d);box-shadow:0 0 0 2px #772d68}
+.person .role{color:#912959}
+.person{box-shadow:0 5px 19px rgba(36,21,42,.035)}
+.uni .dot{background:#772d68;color:#fff}
+input:focus,select:focus,textarea:focus{border-color:#772d68;outline-color:rgba(119,45,104,.22)}
+.chip:has(input:focus-visible){outline-color:rgba(119,45,104,.3)}
+.filters,.db-search-panel,.db-evidence-card,.db-document-card{
+ box-shadow:0 5px 20px rgba(36,21,42,.045)
+}
+.db-view-tabs button[aria-selected="true"]{border-bottom-color:#dc002d;color:#251b2a}
+.db-search-primary input:focus{border-color:#772d68}
+.db-active-pair{background:#f9edf5;border-left-color:#dc002d}
+.db-chip{background:#f3ecf5;color:#4d3153}
+.db-chip.strategy{background:#fff3dc;color:#744915}
+.db-chip.tactic{background:#eee7f5;color:#53348a}
+.db-full-document{background:#faf8fc}
+#mx-table thead th{background:#f3edf5}
+#mx-table tbody th{background:#fbf9fc}
+#mx-table th.db-matrix-corner{background:#ece1ed}
+.db-cell-details{background:#faf8fc}
+.news-post{border-top:4px solid #772d68;box-shadow:0 6px 20px rgba(36,21,42,.05)}
+.news-category{color:#772d68;background:#f6e9f3}
+.site-footer{background:#201625;color:#e0d7e2;border-top:5px solid #dc002d}
+.site-footer h4{color:#fff}
+.site-footer a{color:#e6dce8}
 .site-footer a:hover{color:#fff}
-.site-footer .legal{color:#c7c7c7}
-:focus-visible{outline:3px solid #dc002d;outline-offset:3px}
+.site-footer .legal{color:#d9cedc}
+:focus-visible{outline:3px solid #009cef;outline-offset:3px}
 @media(max-width:860px){
  .menu{background:#fff;border-bottom:2px solid #dc002d}
- .menu a{color:#222}
+ .menu a{color:#302433}
  .menu a[aria-current="page"]{color:#fff}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art img,.hero .logo-big{filter:none}
 }
