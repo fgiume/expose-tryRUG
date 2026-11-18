@@ -1,0 +1,63 @@
+name: Verify EXPOSE website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JavaScript syntax
+        run: |
+          for f in js/*.js data/matrix-codes.js; do node --check "$f"; done
+      - name: Verify site completeness and matrix coding
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('.')
+          assert (root/'index.html').exists()
+          assert (root/'database.html').exists()
+          assert len(list((root/'documents').glob('episode-*.docx'))) == 69
+          for f in ('data/coded-cases.js','data/episode-search.js','data/matrix-codes.js','js/database-next.js','css/database-next.css'):
+              assert (root/f).exists(), f
+          html=(root/'database.html').read_text()
+          assert all(x in html for x in ('Search the Evidence','Explore the Data','NO DATA','data/matrix-codes.js'))
+          assert 'data/cases.js' not in html
+          print('Site files, document count and coded-data dependencies verified.')
+          PY
+      - name: Test integrated Database UI
+        run: |
+          npm install --no-save --no-package-lock jsdom@26
+          node tests/check-ui.cjs
+      - name: Check EXPOSE News page and publishing data
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          root = Path('.')
+          data = json.loads((root/'data/news.json').read_text())
+          assert isinstance(data.get('posts'), list)
+          assert 'js/news.js' in (root/'news.html').read_text()
+          for page in ['index.html','about.html','our-project.html','database.html','countries.html','contact.html','thanks.html','news.html']:
+              s=(root/page).read_text()
+              assert 'href="news.html"' in s, page
+          print('News page, data format and navigation checked.')
+          PY
+      - name: Check workbook coding matrix decodes
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),vm=require('vm');
+          const sandbox={window:{},atob:globalThis.atob};
+          vm.runInNewContext(fs.readFileSync('data/matrix-codes.js','utf8'),sandbox);
+          const code=sandbox.window.EXPOSE_CODE_STATUS.episodeCodes;
+          if(Object.keys(code).length!==69)throw new Error('Expected 69 episode code rows');
+          for(const [ep,v] of Object.entries(code)){
+            if(Object.keys(v).length!==99)throw new Error(ep+' has invalid variable count');
+            for(const x of Object.values(v))if(![0,1,9].includes(x))throw new Error('Invalid coding');
+          }
+          console.log('Workbook coding statuses verified for 69 episodes.');
+          NODE
