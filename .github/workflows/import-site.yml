@@ -1,0 +1,23 @@
+name: Import EXPOSE website from try4
+on:
+  push:
+    paths:
+      - '.github/workflows/import-site.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out destination
+        uses: actions/checkout@v4
+      - name: Copy site, research data and documents
+        run: |
+          git clone --depth 1 https://github.com/fgiume/expose-try4.git /tmp/expose-source
+          rsync -a --exclude='.git' --exclude='.github/workflows' /tmp/expose-source/ ./
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import complete EXPOSE site and research assets from try4"
+          git push origin HEAD:main
