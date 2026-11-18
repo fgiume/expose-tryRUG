@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="Pages of a Panel of Experts report with evasion methods highlighted in different colours">
   <title>Reports, highlighted and classified</title>
   <defs>
-    <filter id="sh" x="-10%" y="-10%" width="130%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0a1a33" flood-opacity=".22"/></filter>
+    <filter id="sh" x="-10%" y="-10%" width="130%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#24152a" flood-opacity=".22"/></filter>
     <style>
       .ln{fill:#c9d3e6}
-      .hl1{fill:#1f8fd6;opacity:.35}.hl2{fill:#8a5cf6;opacity:.35}.hl3{fill:#e4572e;opacity:.35}.hl4{fill:#2a9d8f;opacity:.4}
+      .hl1{fill:#009cef;opacity:.35}.hl2{fill:#772d68;opacity:.35}.hl3{fill:#dc002d;opacity:.35}.hl4{fill:#35b6b4;opacity:.4}
       text{font-family:Inter,Segoe UI,Arial,sans-serif}
     </style>
   </defs>
-  <rect width="520" height="400" rx="24" fill="#e9eff9"/>
+  <rect width="520" height="400" rx="24" fill="#f6eef5"/>
   <g filter="url(#sh)">
     <rect x="60" y="48" width="250" height="316" rx="10" fill="#fff" transform="rotate(-6 185 206)"/>
     <rect x="120" y="36" width="250" height="316" rx="10" fill="#fff" transform="rotate(3 245 194)"/>
@@ -16,8 +16,8 @@
   <g filter="url(#sh)">
     <rect x="170" y="40" width="270" height="324" rx="10" fill="#fff"/>
   </g>
-  <rect x="170" y="40" width="270" height="46" rx="10" fill="#0a1a33"/>
-  <rect x="170" y="70" width="270" height="16" fill="#0a1a33"/>
+  <rect x="170" y="40" width="270" height="46" rx="10" fill="#24152a"/>
+  <rect x="170" y="70" width="270" height="16" fill="#24152a"/>
   <text x="188" y="68" font-size="13" font-weight="700" fill="#fff" letter-spacing="1.5">S/2019/691</text>
   <text x="352" y="68" font-size="11" fill="#9fc0ef" letter-spacing="1.2">PANEL REPORT</text>
   <g>
@@ -35,9 +35,9 @@
   </g>
   <!-- tags -->
   <g font-size="11" font-weight="700" fill="#fff" letter-spacing=".5">
-    <rect x="392" y="120" width="82" height="22" rx="11" fill="#1f8fd6"/><text x="404" y="135">MARITIME</text>
-    <rect x="410" y="184" width="64" height="22" rx="11" fill="#8a5cf6"/><text x="421" y="199">CYBER</text>
-    <rect x="368" y="248" width="96" height="22" rx="11" fill="#e4572e"/><text x="379" y="263">FRONT CO.</text>
-    <rect x="394" y="296" width="82" height="22" rx="11" fill="#2a9d8f"/><text x="406" y="311">COMMODITY</text>
+    <rect x="392" y="120" width="82" height="22" rx="11" fill="#009cef"/><text x="404" y="135">MARITIME</text>
+    <rect x="410" y="184" width="64" height="22" rx="11" fill="#772d68"/><text x="421" y="199">CYBER</text>
+    <rect x="368" y="248" width="96" height="22" rx="11" fill="#dc002d"/><text x="379" y="263">FRONT CO.</text>
+    <rect x="394" y="296" width="82" height="22" rx="11" fill="#35b6b4"/><text x="406" y="311">COMMODITY</text>
   </g>
 </svg>
